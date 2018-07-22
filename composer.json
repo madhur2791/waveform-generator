@@ -1,0 +1,14 @@
+{
+    "name": "casa01/waveform",
+    "authors": [
+        {
+            "name": "Madhu R",
+            "email": "madhu@casaone.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "boyhagemann/waveform": "dev-master",
+        "maximal/audio-waveform": "~1.0"
+    }
+}
