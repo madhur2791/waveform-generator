@@ -51,14 +51,14 @@ $waveformHtml = '';
 			}
 		}
 	}
-	
+
 	foreach($percentages as $p) {
 		$waveformHtml .= "<span class='Aligner-item' style='height:". $p*100/$maxPerentage ."%'></span>";
 	}
 }
 
 ?>
-<?php if($_SERVER['REQUEST_METHOD'] === 'POST') { ?>
+
 <html>
     <head>        
         <style>
@@ -96,19 +96,16 @@ $waveformHtml = '';
         </style>
     </head>
     <body>        
-        
+        <form  enctype="multipart/form-data" method="post">
+					<input type='file' name="file_name">
+					<br>
+					<input type='submit'>
+				</form>
+				<?php if($_SERVER['REQUEST_METHOD'] === 'POST') { ?>
         <div id="waveform" class="Aligner">
             <?php echo $waveformHtml ?>
         </div>
-        
+        <?php } ?>
     </body>
 </html>
-<?php } else { ?>
-<form  enctype="multipart/form-data" method="post">
-	<input type='file' name="file_name">
-	<br>
-	<input type='submit'>
-</form>
-</body>
-</html>
-<?php } ?>
+
